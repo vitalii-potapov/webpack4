@@ -1,5 +1,81 @@
-node_modules
-dist
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
 public
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalisation:
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/
+
+# for a library or gem, you might want to ignore these files since the code is
+# intended to run in multiple environments; otherwise, check them in:
+# Gemfile.lock
+.ruby-version
+.ruby-gemset
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+# .rvmrc
+
+.idea
+.env
+.env.production
+
+.vscode
+
+config/database.yml
+
+log
+
+public/uploads
+public/development
+public/production
+public/test
+public/assets
+
+startup.sh
+/public/packs
+/public/packs-test
+/node_modules
+
+app/javascript/packs/source/**/application-*.js
+app/javascript/packs/source/**/email-*.js
+app/javascript/packs/source/**/recipeamp-*.js
+app/javascript/packs/source/**/dashboard-*.js
+
+app/javascript/packs/sass/global-*.sass
+app/javascript/packs/sass/email-*.sass
+app/javascript/packs/sass/recipe_amp-*.sass
+app/javascript/packs/sass/_variables-*.sass
+
+config/webpack/production-*.js
+config/webpack/development-*.js
+config/webpack/configuration-*.js
+config/webpack/shared-*.js
+config/webpacker-*.yml
+
+
+*.sql
+*.dump
+.capistrano
+docker-compose.override.yml
+
+.DS_Store
+
+docker-compose.override.yml
 
 package-lock.json

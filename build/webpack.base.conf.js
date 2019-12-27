@@ -7,27 +7,27 @@ const { VueLoaderPlugin } = require('vue-loader');
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../public'),
-  assets: 'static/'
-}
+  assets: 'static/',
+};
 
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
   },
   output: {
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
       },
       {
         test: /\.vue$/,
@@ -42,8 +42,8 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
-        }
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.scss$/,
@@ -52,17 +52,17 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `${PATHS.src}/js/config/postcss.config.js` } }
+            options: { sourceMap: true, config: { path: `${PATHS.src}/js/config/postcss.config.js` } },
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true }
-          }
-        ]
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -71,33 +71,33 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           }, {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `${PATHS.src}/js/config/postcss.config.js` } }
-          }
-        ]
+            options: { sourceMap: true, config: { path: `${PATHS.src}/js/config/postcss.config.js` } },
+          },
+        ],
       },
-    ]
+    ],
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.js',
+      vue$: 'vue/dist/vue.js',
     },
   },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].css`
+      filename: `${PATHS.assets}css/[name].css`,
     }),
     new HtmlWebpackPlugin({
       hash: false,
       template: `${PATHS.src}/index.html`,
-      filename: './index.html'
+      filename: './index.html',
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/static`, to: '' }
-    ])
-  ]
-}
+      { from: `${PATHS.src}/static`, to: '' },
+    ]),
+  ],
+};
