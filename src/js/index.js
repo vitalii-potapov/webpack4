@@ -1,3 +1,7 @@
-const add = (a, b) => a + b;
-console.log(add(4, 3))
-console.log(add(1, 3))
+window.Vue = require('vue');
+
+Vue.component('example-component', () => import('../components/example/index.vue'));
+
+const app = new Vue({
+  el: '#app',
+});
